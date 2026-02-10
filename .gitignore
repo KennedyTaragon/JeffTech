@@ -54,3 +54,6 @@ NodeLogs
 .cache/
 .parcel-cache/
 .eslintcache
+
+# Documentation (kept locally, not committed)
+docs/
