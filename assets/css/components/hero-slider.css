@@ -1,0 +1,288 @@
+/* 
+ * Hero Slider Component
+ * JeffTech Electronics
+ */
+
+/* ==========================================================================
+   Hero Slider Base
+   ========================================================================== */
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    min-height: 400px;
+    max-height: 600px;
+    overflow: hidden;
+    background-color: var(--color-gray-900);
+}
+
+.hero-slider__slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Individual Slide
+   ========================================================================== */
+
+.hero-slider__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.hero-slider__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero-slider__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Slide Overlay for Text Readability */
+.hero-slider__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+}
+
+/* ==========================================================================
+   Slide Content
+   ========================================================================== */
+
+.hero-slider__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--color-white);
+    max-width: 800px;
+    padding: var(--space-4);
+    z-index: 1;
+}
+
+.hero-slider__title {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-slider__subtitle {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-slider__actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Navigation Controls
+   ========================================================================== */
+
+.hero-slider__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: var(--radius-full);
+    color: var(--color-white);
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color var(--transition-fast);
+}
+
+.hero-slider__control:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-slider__control:focus {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
+}
+
+.hero-slider__control--prev {
+    left: var(--space-4);
+}
+
+.hero-slider__control--next {
+    right: var(--space-4);
+}
+
+.hero-slider__control svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ==========================================================================
+   Indicators/Dots
+   ========================================================================== */
+
+.hero-slider__indicators {
+    position: absolute;
+    bottom: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-2);
+    z-index: 10;
+}
+
+.hero-slider__indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.hero-slider__indicator:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-slider__indicator.is-active {
+    background-color: var(--color-white);
+}
+
+.hero-slider__indicator:focus {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 400px;
+        min-height: 350px;
+    }
+    
+    .hero-slider__control {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .hero-slider__control--prev {
+        left: var(--space-2);
+    }
+    
+    .hero-slider__control--next {
+        right: var(--space-2);
+    }
+    
+    .hero-slider__title {
+        font-size: var(--text-2xl);
+    }
+    
+    .hero-slider__subtitle {
+        font-size: var(--text-base);
+    }
+    
+    .hero-slider__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-slider__actions .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .hero-slider__indicators {
+        bottom: var(--space-4);
+    }
+    
+    .hero-slider__indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-slider {
+        height: 350px;
+    }
+    
+    .hero-slider__title {
+        font-size: var(--text-xl);
+    }
+    
+    .hero-slider__overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.hero-slider[aria-roledescription="carousel"] {
+    /* ARIA role for carousel */
+    role: region;
+}
+
+.hero-slider__slide[aria-roledescription="slide"] {
+    /* ARIA role for individual slides */
+    role: group;
+    aria-roledescription: slide;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-slider__slide {
+        transition: none;
+    }
+    
+    .hero-slider__control,
+    .hero-slider__indicator {
+        transition: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .hero-slider__control,
+    .hero-slider__indicator {
+        border: 2px solid var(--color-white);
+    }
+}

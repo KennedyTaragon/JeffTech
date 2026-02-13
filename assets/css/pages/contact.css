@@ -1,0 +1,378 @@
+/* 
+ * Contact Page Styles
+ * JeffTech Electronics
+ */
+
+/* ==========================================================================
+   Contact Section
+   ========================================================================== */
+
+.contact-section {
+    padding: var(--space-16) 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-12);
+}
+
+/* ==========================================================================
+   Contact Info
+   ========================================================================== */
+
+.contact-info {
+    padding: var(--space-8);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-xl);
+}
+
+.contact-title {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.contact-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+}
+
+/* Contact Info Items */
+.contact-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.contact-info-item {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.contact-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+}
+
+.contact-info-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-info-content {
+    flex: 1;
+}
+
+.contact-info-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.contact-info-content p {
+    margin-bottom: 0;
+    color: var(--text-secondary);
+}
+
+.contact-info-content a {
+    color: var(--color-primary);
+}
+
+.contact-info-content a:hover {
+    text-decoration: underline;
+}
+
+.contact-info-note {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary) !important;
+}
+
+.contact-info-content address {
+    font-style: normal;
+    color: var(--text-secondary);
+}
+
+/* WhatsApp Link */
+.contact-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: #25D366 !important;
+    font-weight: 500;
+    margin-top: var(--space-1);
+}
+
+.contact-whatsapp:hover {
+    text-decoration: none;
+    color: #128C7E !important;
+}
+
+/* Social Links */
+.contact-social {
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-social-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-gray-200);
+    color: var(--text-secondary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================================================
+   Contact Form
+   ========================================================================== */
+
+.contact-form-wrapper {
+    padding: var(--space-8);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+}
+
+.contact-form {
+    margin-top: var(--space-6);
+}
+
+/* ==========================================================================
+   Map Section
+   ========================================================================== */
+
+.map-section {
+    background-color: var(--color-gray-50);
+    padding: var(--space-16) 0;
+}
+
+.map-wrapper {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background: linear-gradient(135deg, var(--color-gray-200) 0%, var(--color-gray-300) 100%);
+    color: var(--text-secondary);
+    padding: var(--space-8);
+    text-align: center;
+}
+
+.map-placeholder svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--space-4);
+    opacity: 0.5;
+}
+
+.map-placeholder p {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.map-address {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-4);
+}
+
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+
+.faq-section {
+    padding: var(--space-16) 0;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: var(--space-12) auto 0;
+}
+
+.faq-item {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-item[open] {
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+    padding: var(--space-4) var(--space-6);
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color var(--transition-fast);
+}
+
+.faq-question:hover {
+    background-color: var(--color-gray-50);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: var(--text-xl);
+    color: var(--color-primary);
+    transition: transform var(--transition-fast);
+}
+
+.faq-item[open] .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 var(--space-6) var(--space-4);
+    color: var(--text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+.faq-answer p {
+    margin-bottom: var(--space-4);
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Responsive Contact Page
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .contact-form-wrapper {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: var(--space-12) 0;
+    }
+    
+    .contact-info,
+    .contact-form-wrapper {
+        padding: var(--space-6);
+    }
+    
+    .map-section {
+        padding: var(--space-12) 0;
+    }
+    
+    .map-placeholder {
+        min-height: 300px;
+    }
+    
+    .faq-section {
+        padding: var(--space-12) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info-items {
+        gap: var(--space-4);
+    }
+    
+    .contact-info-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .contact-info-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+    }
+}
+
+/* ==========================================================================
+   High Contrast Mode
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    .contact-info,
+    .contact-form-wrapper,
+    .faq-item {
+        border-width: 2px;
+        border-color: var(--color-black);
+    }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .faq-question::after {
+        transition: none;
+    }
+    
+    .social-link {
+        transition: none;
+    }
+}

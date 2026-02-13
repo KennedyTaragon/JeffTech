@@ -1,0 +1,212 @@
+/* 
+ * Testimonials Component
+ * JeffTech Electronics
+ */
+
+/* ==========================================================================
+   Testimonials Section
+   ========================================================================== */
+
+.testimonials {
+    background-color: var(--color-gray-50);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+}
+
+/* ==========================================================================
+   Testimonial Card
+   ========================================================================== */
+
+.testimonial-card {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+/* Testimonial Rating */
+.testimonial-rating {
+    display: flex;
+    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+    color: var(--color-accent);
+}
+
+.testimonial-rating svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-size: var(--text-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+}
+
+.testimonial-text::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--color-primary);
+    line-height: 0;
+    margin-right: var(--space-1);
+    vertical-align: -0.3em;
+}
+
+.testimonial-text::after {
+    content: '"';
+    font-size: 2rem;
+    color: var(--color-primary);
+    line-height: 0;
+    margin-left: var(--space-1);
+    vertical-align: -0.3em;
+}
+
+/* Testimonial Author */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-color);
+}
+
+.testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    flex-shrink: 0;
+}
+
+.testimonial-info {
+    flex: 1;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.testimonial-service {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Verified Badge (Optional)
+   ========================================================================== */
+
+.testimonial-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--color-success);
+    margin-top: var(--space-2);
+}
+
+.testimonial-verified svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ==========================================================================
+   Responsive Testimonials
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-card {
+        padding: var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Testimonials Variants
+   ========================================================================== */
+
+/* Centered Testimonials */
+.testimonials--centered .testimonials-grid {
+    justify-content: center;
+}
+
+.testimonials--centered .testimonial-card {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonials--centered .testimonial-author {
+    justify-content: center;
+}
+
+/* Dark Background */
+.testimonials--dark {
+    background-color: var(--color-gray-900);
+    color: var(--color-gray-300);
+}
+
+.testimonials--dark .testimonial-card {
+    background-color: var(--color-gray-800);
+    border-color: var(--color-gray-700);
+}
+
+.testimonials--dark .testimonial-name {
+    color: var(--color-white);
+}
+
+.testimonials--dark .testimonial-text {
+    color: var(--color-gray-400);
+}
+
+.testimonials--dark .testimonial-author {
+    border-color: var(--color-gray-700);
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.testimonials:focus-within {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
+.testimonial-card:focus-within {
+    outline: none;
+    box-shadow: var(--shadow-lg);
+}

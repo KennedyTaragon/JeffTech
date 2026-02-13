@@ -1,0 +1,356 @@
+/* 
+ * Navigation Enhancements Component
+ * JeffTech Electronics
+ */
+
+/* ==========================================================================
+   Breadcrumbs
+   ========================================================================== */
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: var(--space-3) 0;
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+}
+
+.breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.breadcrumbs__item:not(:last-child)::after {
+    content: '/';
+    color: var(--color-gray-300);
+}
+
+.breadcrumbs__link {
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.breadcrumbs__link:hover {
+    color: var(--color-primary);
+}
+
+.breadcrumbs__current {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) 0;
+}
+
+.pagination__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.pagination__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.pagination__item:hover {
+    background-color: var(--color-gray-100);
+    border-color: var(--color-gray-300);
+}
+
+.pagination__item--active,
+.pagination__item[aria-current="page"] {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.pagination__item--disabled,
+.pagination__item:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination__item--ellipsis {
+    border: none;
+    background: transparent;
+    cursor: default;
+}
+
+.pagination__label {
+    padding: 0 var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Tabs
+   ========================================================================== */
+
+.tabs {
+    width: 100%;
+}
+
+.tabs__list {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    gap: var(--space-1);
+}
+
+.tabs__tab {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-bottom: -1px;
+}
+
+.tabs__tab:hover {
+    color: var(--text-primary);
+}
+
+.tabs__tab[aria-selected="true"],
+.tabs__tab--active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.tabs__panel {
+    padding: var(--space-6) 0;
+    display: none;
+}
+
+.tabs__panel.is-open {
+    display: block;
+}
+
+/* Vertical Tabs */
+.tabs--vertical {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-4);
+}
+
+.tabs--vertical .tabs__list {
+    flex-direction: column;
+    border-bottom: none;
+    border-right: 1px solid var(--border-color);
+    padding-right: var(--space-4);
+}
+
+.tabs--vertical .tabs__tab {
+    border-bottom: none;
+    border-left: 2px solid transparent;
+    margin-left: calc(-1 * var(--space-4));
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.tabs--vertical .tabs__tab[aria-selected="true"],
+.tabs--vertical .tabs__tab--active {
+    border-left-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Sticky Header with Scroll Effect
+   ========================================================================== */
+
+.header--sticky {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    transition: all var(--transition-normal);
+}
+
+.header--sticky.is-scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+.header--sticky.is-scrolled .header__inner {
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+}
+
+/* ==========================================================================
+   Back to Top Button
+   ========================================================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-normal);
+    z-index: var(--z-dropdown);
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.back-to-top:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ==========================================================================
+   Skip Link (already in main.css, this enhances it)
+   ========================================================================== */
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    z-index: 9999;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: var(--space-4);
+}
+
+/* ==========================================================================
+   Responsive Navigation
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .breadcrumbs {
+        font-size: var(--text-xs);
+        gap: var(--space-1);
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+    }
+    
+    .pagination__item {
+        min-width: 36px;
+        height: 36px;
+    }
+    
+    .tabs--vertical {
+        grid-template-columns: 1fr;
+    }
+    
+    .tabs--vertical .tabs__list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--border-color);
+        border-right: none;
+        padding-right: 0;
+        padding-bottom: var(--space-2);
+    }
+    
+    .tabs--vertical .tabs__tab {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        margin-left: 0;
+        margin-bottom: -1px;
+    }
+    
+    .tabs--vertical .tabs__tab[aria-selected="true"],
+    .tabs--vertical .tabs__tab--active {
+        border-left: none;
+        border-bottom-color: var(--color-primary);
+    }
+    
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: var(--space-4);
+        right: var(--space-4);
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.breadcrumbs__link:focus,
+.pagination__item:focus,
+.tabs__tab:focus,
+.back-to-top:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .tabs__tab {
+        border-width: 2px;
+    }
+    
+    .pagination__item {
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top,
+    .tabs__tab,
+    .pagination__item {
+        transition: none;
+    }
+}

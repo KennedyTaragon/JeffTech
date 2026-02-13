@@ -1,0 +1,412 @@
+/* 
+ * Alerts Component
+ * JeffTech Electronics
+ */
+
+/* ==========================================================================
+   Alert Base
+   ========================================================================== */
+
+.alert {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    margin-bottom: var(--space-4);
+}
+
+.alert__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.alert__content {
+    flex: 1;
+}
+
+.alert__title {
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+}
+
+.alert__message {
+    font-size: var(--text-sm);
+    line-height: var(--line-height-relaxed);
+}
+
+.alert__dismiss {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: currentColor;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+
+.alert__dismiss:hover {
+    opacity: 1;
+}
+
+.alert__dismiss:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Alert Variants
+   ========================================================================== */
+
+.alert--success {
+    background-color: var(--color-success-bg);
+    border-color: var(--color-success-border);
+    color: var(--color-success-dark);
+}
+
+.alert--success .alert__icon {
+    color: var(--color-success);
+}
+
+.alert--warning {
+    background-color: var(--color-warning-bg);
+    border-color: var(--color-warning-border);
+    color: var(--color-warning-dark);
+}
+
+.alert--warning .alert__icon {
+    color: var(--color-warning);
+}
+
+.alert--error {
+    background-color: var(--color-danger-bg);
+    border-color: var(--color-danger-border);
+    color: var(--color-danger-dark);
+}
+
+.alert--error .alert__icon {
+    color: var(--color-danger);
+}
+
+.alert--info {
+    background-color: var(--color-info-bg);
+    border-color: var(--color-info-border);
+    color: var(--color-info-dark);
+}
+
+.alert--info .alert__icon {
+    color: var(--color-info);
+}
+
+/* ==========================================================================
+   Toast Notifications
+   ========================================================================== */
+
+.toast-container {
+    position: fixed;
+    top: var(--space-4);
+    right: var(--space-4);
+    z-index: var(--z-toast);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 400px;
+}
+
+.toast {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    border-left: 4px solid;
+    animation: slideIn var(--transition-normal) ease-out;
+}
+
+.toast--success {
+    border-left-color: var(--color-success);
+}
+
+.toast--error {
+    border-left-color: var(--color-danger);
+}
+
+.toast--warning {
+    border-left-color: var(--color-warning);
+}
+
+.toast--info {
+    border-left-color: var(--color-info);
+}
+
+.toast__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.toast--success .toast__icon {
+    color: var(--color-success);
+}
+
+.toast--error .toast__icon {
+    color: var(--color-danger);
+}
+
+.toast--warning .toast__icon {
+    color: var(--color-warning);
+}
+
+.toast--info .toast__icon {
+    color: var(--color-info);
+}
+
+.toast__content {
+    flex: 1;
+}
+
+.toast__title {
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+}
+
+.toast__message {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.toast__close {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text-tertiary);
+    transition: background-color var(--transition-fast);
+}
+
+.toast__close:hover {
+    background-color: var(--color-gray-100);
+}
+
+.toast__close:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* Toast with action */
+.toast__action {
+    flex-shrink: 0;
+    margin-left: auto;
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-primary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+}
+
+.toast__action:hover {
+    background-color: var(--color-primary-bg);
+}
+
+.toast__action:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Inline Form Validation
+   ========================================================================== */
+
+.form-group__error {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-danger);
+}
+
+.form-group__error svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+}
+
+.form-group__hint {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+}
+
+/* Success message after form submission */
+.form-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.form-success__icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--space-4);
+    color: var(--color-success);
+}
+
+.form-success__title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+}
+
+.form-success__message {
+    color: var(--text-secondary);
+    max-width: 400px;
+}
+
+/* ==========================================================================
+   Banner Alert
+   ========================================================================== */
+
+.alert-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    text-align: center;
+    font-size: var(--text-sm);
+}
+
+.alert-banner--info {
+    background-color: var(--color-info-bg);
+    color: var(--color-info-dark);
+}
+
+.alert-banner--warning {
+    background-color: var(--color-warning-bg);
+    color: var(--color-warning-dark);
+}
+
+.alert-banner--error {
+    background-color: var(--color-danger-bg);
+    color: var(--color-danger-dark);
+}
+
+.alert-banner__text {
+    flex: 1;
+}
+
+.alert-banner__link {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.alert-banner__close {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: currentColor;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+
+.alert-banner__close:hover {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 640px) {
+    .toast-container {
+        top: auto;
+        bottom: var(--space-4);
+        left: var(--space-4);
+        right: var(--space-4);
+        max-width: none;
+    }
+    
+    .alert-banner {
+        flex-wrap: wrap;
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.alert[role="alert"] {
+    /* Ensures screen readers announce the alert */
+    speak: assertive;
+}
+
+.alert:focus,
+.toast:focus,
+.alert-banner:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .alert,
+    .toast {
+        border-width: 2px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .toast {
+        animation: none;
+    }
+    
+    .toast[aria-hidden="true"] {
+        display: none;
+    }
+}

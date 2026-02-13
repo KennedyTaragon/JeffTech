@@ -1,0 +1,310 @@
+/* 
+ * Services Page Styles
+ * JeffTech Electronics
+ */
+
+/* ==========================================================================
+   Page Header
+   ========================================================================== */
+
+.page-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+    padding: var(--space-16) 0;
+    text-align: center;
+}
+
+.page-title {
+    color: var(--color-white);
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+}
+
+.page-subtitle {
+    font-size: var(--text-lg);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--color-white);
+}
+
+/* ==========================================================================
+   Service Detail Cards
+   ========================================================================== */
+
+.services-list {
+    padding: var(--space-16) 0;
+}
+
+.services-list .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+}
+
+.service-detail-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-8);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.service-detail-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+.service-detail-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+    padding: var(--space-8);
+    min-height: 200px;
+}
+
+.service-detail-image svg {
+    width: 80px;
+    height: 80px;
+}
+
+.service-detail-content {
+    padding: var(--space-8);
+}
+
+.service-detail-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+}
+
+.service-detail-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Service Features List */
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+}
+
+.service-features svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-success);
+    flex-shrink: 0;
+}
+
+/* Pricing Section */
+.service-detail-pricing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-4);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+.pricing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pricing-item:last-child {
+    border-bottom: none;
+}
+
+.pricing-name {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+}
+
+.pricing-price {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: var(--text-base);
+}
+
+/* Service Actions */
+.service-detail-actions {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+}
+
+/* Warranty Badge */
+.service-warranty {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-success);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.service-warranty svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================================================
+   Repair Process Section
+   ========================================================================== */
+
+.repair-process {
+    background-color: var(--color-gray-50);
+    padding: var(--space-16) 0;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+
+.process-step {
+    text-align: center;
+    padding: var(--space-6);
+}
+
+.process-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+}
+
+.process-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.process-description {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+    line-height: var(--line-height-relaxed);
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: var(--space-12) 0;
+    }
+    
+    .page-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .service-detail-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-detail-image {
+        min-height: 150px;
+    }
+    
+    .service-detail-image svg {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-detail-content {
+        padding: var(--space-6);
+    }
+    
+    .service-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-detail-pricing {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-1);
+    }
+    
+    .service-detail-actions {
+        flex-direction: column;
+    }
+    
+    .service-detail-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   High Contrast Mode
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    .service-detail-card {
+        border-width: 2px;
+        border-color: var(--color-black);
+    }
+    
+    .service-detail-pricing {
+        border: 1px solid var(--color-black);
+    }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .service-detail-card {
+        transition: none;
+    }
+    
+    .service-detail-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
